@@ -17,14 +17,13 @@ function newItem(){
 
 //jQuery 1. Adding a new item to the list of items:
     let li = $('<li></li>');
-    let inputValue = $('#input').value();
+    let inputValue = $('#input').val();
     li.append(inputValue);
 
     if (inputValue === '') {
       alert("You must write something!");
     } else {
-      let list = document.querySelector('#list');
-      list.appendChild(li);
+      $('#list').append(li);
     }
 
  //2. Crossing out an item from the list of items:
@@ -62,10 +61,10 @@ function newItem(){
  	// }
 
  //jQuery 3(ii). Delete . . .
-   crossOutButton.on('click', deleteListItem);
-   function deleteListItem() {
-     li.addClass('delete')
-   }
+ crossOutButton.on('click', deleteListItem);
+ function deleteListItem() {
+   li.addClass('delete')
+ }
 
  // 4. Reordering the items:
    $('#list').sortable();
